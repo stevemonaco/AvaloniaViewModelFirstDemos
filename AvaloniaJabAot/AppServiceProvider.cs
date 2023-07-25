@@ -8,10 +8,12 @@ namespace AvaloniaJabTest;
 [ServiceProvider]
 [Singleton<IRandomService, RandomService>]
 [Singleton<IPersonViewModelFactory, PersonViewModelFactory>]
+[Singleton<LogoViewModel>]
 [Singleton<MainWindowViewModel>]
-[Singleton<MainWindow>]
 [Transient<PersonViewModel>]
+[Singleton<MainWindow>]
 [Transient<PersonView>]
+[Singleton<LogoView>]
 public partial class AppServiceProvider
 {
 }

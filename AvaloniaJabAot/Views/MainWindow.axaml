@@ -12,20 +12,21 @@
     Icon="/Assets/avalonia-logo.ico"
     mc:Ignorable="d">
 
-    <Design.DataContext>
-        <!--
-            This only sets the DataContext for the previewer in an IDE,
-            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
-        -->
-        <vm:MainWindowViewModel />
-    </Design.DataContext>
-  
-    <Grid RowDefinitions="auto,*" Margin="8">
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Text="{Binding Greeting}" />
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding People}" />
-    </Grid>
+    <Grid
+        Margin="8"
+        ColumnDefinitions="auto,*"
+        RowDefinitions="auto, *">
+        <ItemsControl Grid.RowSpan="2" ItemsSource="{Binding People}" />
 
+        <TextBlock
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            Text="{Binding Greeting}" />
+
+        <ContentControl
+            x:Name="content"
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="{Binding Logo}" />
+    </Grid>
 </Window>

@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Shared.Services;
 
 namespace AvaloniaJabAot.ViewModels;
-public partial class PersonViewModel : ViewModelBase
+public partial class PersonViewModel : ObservableObject
 {
     [ObservableProperty] private string? _name;
     [ObservableProperty] private int _randomValue;

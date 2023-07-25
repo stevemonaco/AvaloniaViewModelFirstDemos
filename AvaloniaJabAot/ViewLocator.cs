@@ -5,6 +5,7 @@ using Avalonia.Controls.Templates;
 using AvaloniaJabAot.Views;
 using AvaloniaJabAot.ViewModels;
 using AvaloniaJabTest;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AvaloniaJabAot;
 public class ViewLocator : IDataTemplate
@@ -17,6 +18,7 @@ public class ViewLocator : IDataTemplate
         _appServiceProvider = appServiceProvider;
         RegisterViewFactory<MainWindowViewModel, MainWindow>();
         RegisterViewFactory<PersonViewModel, PersonView>();
+        RegisterViewFactory<LogoViewModel, LogoView>();
     }
 
     public Control Build(object? data)
@@ -31,7 +33,7 @@ public class ViewLocator : IDataTemplate
 
     public bool Match(object? data)
     {
-        return data is ViewModelBase;
+        return data is ObservableObject;
     }
 
     public void RegisterViewFactory<TViewModel>(Func<Control> factory) where TViewModel : class => _locator.Add(typeof(TViewModel), factory);

@@ -48,11 +48,13 @@ public partial class App : Application
     internal static partial void ConfigureServices(IServiceCollection services);
 
     [Singleton(typeof(MainWindowViewModel))]
+    [Singleton(typeof(LogoViewModel))]
     [Transient(typeof(PersonViewModel))]
     [Transient(typeof(PersonViewModelFactory), typeof(IPersonViewModelFactory))]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
     [Singleton(typeof(MainWindow))]
+    [Singleton(typeof(LogoView))]
     [Transient(typeof(PersonView))]
     internal static partial void ConfigureViews(IServiceCollection services);
 }

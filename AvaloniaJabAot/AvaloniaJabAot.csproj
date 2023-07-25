@@ -18,6 +18,12 @@
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="AOT Release">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
