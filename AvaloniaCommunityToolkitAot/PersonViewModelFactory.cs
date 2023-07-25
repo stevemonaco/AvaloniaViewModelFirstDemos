@@ -1,6 +1,5 @@
 ﻿using AvaloniaCommunityToolkitAot.ViewModels;
 using Shared.Services;
-using System;
 
 namespace AvaloniaCommunityToolkitAot;
 
@@ -11,18 +10,16 @@ public partial interface IPersonViewModelFactory
 
 public class PersonViewModelFactory : IPersonViewModelFactory
 {
-    private readonly IServiceProvider _serviceProvider;
+    private readonly IRandomService _randomService;
 
-    public PersonViewModelFactory(IServiceProvider serviceProvider)
+    public PersonViewModelFactory(IRandomService randomService)
     {
-        _serviceProvider = serviceProvider;
+        _randomService = randomService;
     }
 
     public PersonViewModel Create(string name)
     {
-        var randomService = (IRandomService)_serviceProvider.GetService(typeof(IRandomService))!;
-
-        var instance = new PersonViewModel(randomService);
+        var instance = new PersonViewModel(_randomService);
         instance.Name = name;
 
         return instance;

@@ -50,7 +50,7 @@ public partial class App : Application
     [Singleton(typeof(MainWindowViewModel))]
     [Singleton(typeof(LogoViewModel))]
     [Transient(typeof(PersonViewModel))]
-    [Transient(typeof(PersonViewModelFactory), typeof(IPersonViewModelFactory))]
+    [Singleton(typeof(PersonViewModelFactory), typeof(IPersonViewModelFactory))]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
     [Singleton(typeof(MainWindow))]
