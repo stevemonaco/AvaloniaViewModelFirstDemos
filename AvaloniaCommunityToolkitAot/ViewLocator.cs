@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using AvaloniaCommunityToolkitAot.ViewModels;
+using Shared.ViewModels;
 using AvaloniaCommunityToolkitAot.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;

@@ -1,7 +1,6 @@
-﻿using AvaloniaCommunityToolkitAot.ViewModels;
-using Shared.Services;
+﻿using Shared.Services;
 
-namespace AvaloniaCommunityToolkitAot;
+namespace Shared.ViewModels;
 
 public partial interface IPersonViewModelFactory
 {

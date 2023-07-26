@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using AvaloniaCommunityToolkitAot.ViewModels;
 using AvaloniaCommunityToolkitAot.Views;
 using CommunityToolkit.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.ViewModels;
 using Shared.Services;
 
 namespace AvaloniaCommunityToolkitAot;
@@ -35,6 +35,7 @@ public partial class App : Application
             Ioc.Default.ConfigureServices(provider);
 
             var vm = Ioc.Default.GetService<MainWindowViewModel>();
+            vm!.Greeting = "Welcome to a Community Toolkit-based ViewLocator ready for AOT!";
             var mainWindow = Ioc.Default.GetService<MainWindow>()!;
             mainWindow.DataContext = vm;
 

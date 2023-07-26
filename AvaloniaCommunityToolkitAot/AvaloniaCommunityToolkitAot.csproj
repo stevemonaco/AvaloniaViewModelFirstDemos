@@ -43,5 +43,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shared.Services\Shared.Services.csproj" />
+    <ProjectReference Include="..\Shared.ViewModels\Shared.ViewModels.csproj" />
   </ItemGroup>
 </Project>

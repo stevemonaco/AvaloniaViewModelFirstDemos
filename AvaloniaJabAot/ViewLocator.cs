@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using AvaloniaJabAot.Views;
-using AvaloniaJabAot.ViewModels;
+using Shared.ViewModels;
 using AvaloniaJabTest;
 using CommunityToolkit.Mvvm.ComponentModel;
 

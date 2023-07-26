@@ -1,7 +1,7 @@
-﻿using AvaloniaJabAot.ViewModels;
-using AvaloniaJabAot.Views;
+﻿using AvaloniaJabAot.Views;
 using Jab;
 using Shared.Services;
+using Shared.ViewModels;
 
 namespace AvaloniaJabTest;
 

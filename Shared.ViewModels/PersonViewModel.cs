@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Shared.Services;
 
-namespace AvaloniaJabAot.ViewModels;
+namespace Shared.ViewModels;
 public partial class PersonViewModel : ObservableObject
 {
     [ObservableProperty] private string? _name;

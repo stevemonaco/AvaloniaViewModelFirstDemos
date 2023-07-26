@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using AvaloniaJabAot.ViewModels;
+using Shared.ViewModels;
 using AvaloniaJabAot.Views;
 using AvaloniaJabTest;
 
@@ -31,6 +31,7 @@ public partial class App : Application
             BindingPlugins.DataValidators.RemoveAt(0);
 
             var vm = provider.GetService<MainWindowViewModel>();
+            vm.Greeting = "Welcome to a Jab-based ViewLocator ready for AOT!";
             var view = provider.GetService<MainWindow>();
             view.DataContext = vm;
 
