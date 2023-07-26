@@ -3,8 +3,6 @@ using Shared.Services;
 
 namespace AvaloniaJabAot.ViewModels;
 
-[ServiceProviderModule]
-[Transient<PersonViewModel>(Factory = nameof(Create))]
 public partial interface IPersonViewModelFactory
 {
     public PersonViewModel Create(string name);
