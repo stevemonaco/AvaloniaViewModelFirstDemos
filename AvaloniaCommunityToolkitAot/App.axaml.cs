@@ -32,7 +32,7 @@ public partial class App : Application
             ConfigureServices(services);
             ConfigureViewModels(services);
             ConfigureViews(services);
-            var provider = services.BuildServiceProvider();
+            var provider = services.BuildServiceProvider(); // Warning in MEDI 7.0, fixed in 8.0
 
             Ioc.Default.ConfigureServices(provider);
 
