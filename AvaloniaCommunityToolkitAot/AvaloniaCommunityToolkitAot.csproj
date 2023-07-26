@@ -40,7 +40,6 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
-
   <ItemGroup>
     <ProjectReference Include="..\Shared.Services\Shared.Services.csproj" />
     <ProjectReference Include="..\Shared.ViewModels\Shared.ViewModels.csproj" />
