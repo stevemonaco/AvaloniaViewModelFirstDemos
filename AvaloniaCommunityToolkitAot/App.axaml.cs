@@ -8,6 +8,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.ViewModels;
 using Shared.Services;
+using Avalonia.Controls;
 
 namespace AvaloniaCommunityToolkitAot;
 public partial class App : Application
@@ -19,14 +20,15 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        var locator = new ViewLocator();
+        DataTemplates.Add(locator);
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Line below is needed to remove Avalonia data validation.
-            // Without this line you will get duplicate validations from both Avalonia and CT
             BindingPlugins.DataValidators.RemoveAt(0);
 
             var services = new ServiceCollection();
-            // You can split registrations across multiple methods, but you need to remember to call them all
+            // You can split registrations across multiple methods or classes, but you need to remember to call them all
             ConfigureServices(services);
             ConfigureViewModels(services);
             ConfigureViews(services);
@@ -36,10 +38,10 @@ public partial class App : Application
 
             var vm = Ioc.Default.GetService<MainWindowViewModel>();
             vm!.Greeting = "Welcome to a Community Toolkit-based ViewLocator ready for AOT!";
-            var mainWindow = Ioc.Default.GetService<MainWindow>()!;
-            mainWindow.DataContext = vm;
+            var view = (Window)locator.Build(vm);
+            view.DataContext = vm;
 
-            desktop.MainWindow = mainWindow;
+            desktop.MainWindow = view;
         }
 
         base.OnFrameworkInitializationCompleted();

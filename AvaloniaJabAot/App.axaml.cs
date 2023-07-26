@@ -5,6 +5,7 @@ using Avalonia.Markup.Xaml;
 using Shared.ViewModels;
 using AvaloniaJabAot.Views;
 using AvaloniaJabTest;
+using Avalonia.Controls;
 
 namespace AvaloniaJabAot;
 public partial class App : Application
@@ -26,13 +27,12 @@ public partial class App : Application
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Line below is needed to remove Avalonia data validation.
-            // Without this line you will get duplicate validations from both Avalonia and CT
             BindingPlugins.DataValidators.RemoveAt(0);
 
             var vm = provider.GetService<MainWindowViewModel>();
             vm.Greeting = "Welcome to a Jab-based ViewLocator ready for AOT!";
-            var view = provider.GetService<MainWindow>();
+
+            var view = (Window)locator.Build(vm);
             view.DataContext = vm;
 
             desktop.MainWindow = view;
