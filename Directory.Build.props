@@ -1,0 +1,12 @@
+﻿<Project>
+  <PropertyGroup>
+    <Authors>Steve Monaco</Authors>
+    <Company>Steve Monaco</Company>
+    <Copyright>Copyright © Steve Monaco 2025</Copyright>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>
